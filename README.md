@@ -6,9 +6,11 @@ Make sure you have ```virtualenv``` and ```autoenv``` installed.
 ### Install Locally
 
 ```
+# clone repo
 git clone <url> <new-app-name>
 cd new-app-name
 
+# auto-launch virtual environment when you enter the directory
 echo "source venv/bin/activate" > .env
 
 # create virtual environment
@@ -24,8 +26,6 @@ pip install -r requirements.txt
 # launch server
 python app.py
 ```
-
->Note: If the app does not run immediately, it may be because the mongodb has not been configured on heroku.  Continue with the steps below which should solve the problem.
 
 >Note: If you add variables to the ```.env```, you need to deactivate the virtual environment and reactivate.
 
