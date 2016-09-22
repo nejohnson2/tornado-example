@@ -3,10 +3,15 @@ import json, os
 
 class IndexHandler(web.RequestHandler):
 	'''Handle requests on / '''
-	@web.asynchronous
-	def get(self, *args):
+	def get(self):
 		self.write('<h1>Tornado Template</h1>')
 		self.finish()
+
+class DataHandler(web.RequestHandler):
+	'''Handle incoming requests on /data'''
+	@web.asynchronous
+	def get(self, *args):
+		self.write('<h1>Data Page</h1>')
 
 	@web.asynchronous
 	def post(self, *args):
@@ -17,6 +22,7 @@ def main():
 	app = web.Application(
 		[
 			(r'/', IndexHandler),
+			(r'/data', DataHandler),
 		],
 		debug=True,
 	)
